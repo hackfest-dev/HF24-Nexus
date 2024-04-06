@@ -22,7 +22,7 @@ const NavBar = () => {
             <div className="navbar inline-flex gap-3 items-center w-full justify-between font-sans font-bold pt-2">
   <div className="flex items-center">
     <img src="logo.svg" alt="Logo" width="65" style={{ marginRight: '8px' }} />
-    <h6 style={{ margin: '0'}}>Nexus</h6>
+    <h6 style={{ margin: '0',fontFamily:"sans-serif", fontWeight:"bold"}}>Nexus</h6>
   </div>
 
   <div className="flex items-center">

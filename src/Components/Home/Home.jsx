@@ -129,7 +129,7 @@ return (<>
       >
         <div className="container">
           <div className="trend-tab">
-          <ul className="tab-nav flex flex-wrap gap-2">
+          <ul className="tab-nav flex flex-wrap gap-3">
   <li>
     <button className="tab-btn active bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
       Crypto
