@@ -5,9 +5,18 @@ import { Quotes } from "../../Data/Quotes";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 import { UserContext } from "../../Contexts/user.context";
+import FeelingForm from '../../Components/CryptoTable/FeelingForm.component';
 import { Get_Volatility, CalculateStressmetric } from "../../Helpers/API_Calls";
 
 const CryptoRoute = () => {
+    const [isFormOpen, setIsFormOpen] = useState(false);
+
+    const openForm = () => {
+      setIsFormOpen(true);
+    };
+    const closeForm = () => {
+      setIsFormOpen(false);
+    };
   const det = details["data"];
   const { db_user, user } = useContext(UserContext);
   const [stressMetric, setStressMetric] = useState(null);
@@ -54,8 +63,16 @@ const CryptoRoute = () => {
                   </h3>
                 </motion.div>
                 <motion.div className="hidden gap-3 card p-5 lg:flex">
-                  <h3>How are you feeling today?<button className=""> TELL US</button></h3>
-                </motion.div>
+                <h3>
+  How are you feeling today?
+  <button className="bold" style={{ marginLeft: '10px', textDecoration: 'underline' }} onClick={openForm}>
+    {' '}
+    TELL US
+  </button>
+</h3>
+
+      </motion.div>
+      <FeelingForm isOpen={isFormOpen} onClose={closeForm} />
               </div>
             </div>
           </AnimatePresence>

@@ -19,9 +19,8 @@ Address gambling addictions with appropriate measures.
 
 ## Installation and Setup :
 1. Clone the repository to your local machine:
-```
-git clone https://github.com/hackfest-dev/HF24-Nexus
-```
+git clone https://github.com/VinayakRai5/Crypto-Hack.git
+
 2. Navigate to the project directory:
 cd Crypto-Hack
 

@@ -7,7 +7,6 @@ import { FetchCryptoHoldings, FetchCryptoTransactions, FetchFiatTransactions, Fe
 import CryptoHoldings from "../../Components/Dashboard/Holdings.component";
 import CryptoTransactionsDashboard from "../../Components/Dashboard/CryptoTransactions.component";
 import FiatTransactionsDashboard from "../../Components/Dashboard/FiatTransactions.component";
-
 const DashboardRoute = () => {
     const [showAllHoldings, setShowAllHoldings] = useState(false);
 
