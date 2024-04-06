@@ -67,11 +67,14 @@ const CryptoRoute = () => {
               </motion.div>
               <div className="inline w-2/5">
                 <motion.div className="hidden gap-3 card p-5 lg:flex">
-                  <h3>
-                    Today's Market Volatility - {volatilityData ? getLastVolatilityValue(volatilityData) || 'Loading...' : 'Loading...'}
-                    <br />
-                    According to your today's trades: Your Stress Metric - {stressMetric || 'Loading...'}
-                  </h3>
+                <h3>
+                Today's Market Volatility - {volatilityData ? getLastVolatilityValue(volatilityData) || 'Loading...' : 'Loading...'}
+                <br />
+                According to your today's trades: Your Stress Metric - {stressMetric || 'Loading...'}
+              </h3>
+                      {['Extremely Stressed', 'Stressed'].includes(stressMetric) && (
+                        <a href="/Educational_Content">Learn more how you can avoid it</a>
+                      )}
                 </motion.div>
                 <motion.div className="hidden gap-3 card p-5 lg:flex">
                 <h3>
