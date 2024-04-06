@@ -74,7 +74,7 @@ const CryptoRoute = () => {
               </h3>
               <div>
     {['Extremely Stressed', 'Stressed'].includes(stressMetric) && (
-        <a href="/Educational_Content" className="inline-block bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 hover:text-white transition duration-300">Learn more how you can avoid it</a>
+        <a href="/Educational_Content" className="inline-block bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 hover:text-white transition duration-300">Learn more how you can overcome it</a>
     )}
 </div>
 

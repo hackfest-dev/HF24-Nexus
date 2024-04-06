@@ -1103,7 +1103,7 @@ Intervention and Safeguards: Suggest breaks, lock-outs for stress, and address g
           </li>
           <li>
             <a href="#" className="footer-link">
-              Bybit Learn
+              Bitcoin Learn
             </a>
           </li>
           <li>
@@ -1138,7 +1138,7 @@ Intervention and Safeguards: Suggest breaks, lock-outs for stress, and address g
           </li>
           <li>
             <a href="#" className="footer-link">
-              About Bybit
+              About Bitcoin
             </a>
           </li>
           <li>
