@@ -13,7 +13,7 @@ const Header = () => {
       <h1 id="chat-header" className="flex items-center">
       <img src="chat3.png" alt="chatbot" className="h-12" />
 
-        <b style={{ marginLeft: 12, fontSize: 35,color: 'grey'}}>Financial Advisor -</b> <b style={{ marginTop: 4, marginLeft: 8, fontSize: 20, color: 'grey' }}>Your Financial and Mental Health Supporter</b>
+        <b style={{ marginLeft: 12, fontSize: 35,color: 'grey'}}>Financial Assistant -</b> <b style={{ marginTop: 4, marginLeft: 8, fontSize: 20, color: 'grey' }}>Your Financial and Mental Health Supporter</b>
       </h1>
     </div>
   );
