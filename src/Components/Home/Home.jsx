@@ -1200,7 +1200,7 @@ Intervention and Safeguards: Suggest breaks, lock-outs for stress, and address g
   <script src="./script.js" defer />
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js" />
   
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" />
+    <script noModule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js" />
 </>);
 };
 export default HomePage;

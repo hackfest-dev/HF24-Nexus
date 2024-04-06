@@ -72,9 +72,11 @@ const CryptoRoute = () => {
                 <br />
                 According to your today's trades: Your Stress Metric - {stressMetric || 'Loading...'}
               </h3>
+              <div>
                       {['Extremely Stressed', 'Stressed'].includes(stressMetric) && (
                         <a href="/Educational_Content">Learn more how you can avoid it</a>
                       )}
+              </div>
                 </motion.div>
                 <motion.div className="hidden gap-3 card p-5 lg:flex">
                 <h3>

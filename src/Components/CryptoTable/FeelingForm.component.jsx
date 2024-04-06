@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import { Fragment, useContext, useEffect, useState } from "react";
 import Modal from 'react-modal';
 import axios from 'axios';
+import { SaveFeeling } from '../../Helpers/API_Calls';
+import { UserContext } from "../../Contexts/user.context";
+
 
 Modal.setAppElement('#root');
 
 const FeelingForm = ({ isOpen, onClose }) => {
   const [feeling, setFeeling] = useState('');
+  const { db_user, user } = useContext(UserContext);
 
   const handleFeelingChange = (event) => {
     setFeeling(event.target.value);
@@ -14,8 +18,9 @@ const FeelingForm = ({ isOpen, onClose }) => {
   const handleSubmit = async () => {
     try {
       // Save 'feeling' to the database
-      await axios.post('your_api_endpoint', { feeling });
+      SaveFeeling(db_user.uid)
       onClose(); // Close the modal after successfully saving
+      console.log("Success")
     } catch (error) {
       console.error('Error saving feeling:', error);
     }

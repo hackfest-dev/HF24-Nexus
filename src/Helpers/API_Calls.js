@@ -1,4 +1,5 @@
 import axios from "axios"
+import { methods } from "http-parser-js";
 // import { url } from "inspector";
 // import { initializeApp } from "firebase/app";
 // import { getFirestore, setDoc, getDoc, updateDoc , doc } from "firebase/firestore";
@@ -137,6 +138,25 @@ export async function FetchBalance(uid) {
     url: `https://api-cryptohack.onrender.com/users/${uid}/fetch_balance`,
   };
 
+  try {
+    const response = await axios.request(options);
+
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function SaveFeeling(uid, feeling) {
+  const options = {
+    method: 'POST',
+    url: `https://api-cryptohack.onrender.com/users/${uid}/submitfeeling`,
+  params: {
+    uid,
+    feeling
+  },
+};
+  
   try {
     const response = await axios.request(options);
 
