@@ -276,7 +276,7 @@ export async function FetchInitialBalance(uid) {
 export async function Get_Volatility(){
   const options = {
     method: 'GET',
-    url: `https://api-cryptohack.onrender.com/users/get_volatility`
+    url: `https://api-cryptohack.onrender.com/get_volatility`
   };
   try {
     const response = await axios.request(options);
