@@ -17,6 +17,7 @@ import CurrentPricevsEffectivePriceChart from "../../Components/Charts/CurrentPr
 import TradeVolumeChart from "../../Components/Charts/TradeVolume";
 import TransactionTypeChart from "../../Components/Charts/TransactionType";
 import CumulativeInvestmentChart from "../../Components/Charts/CumulativeInvestment";
+import AssetDistributionChart from "../../Components/Charts/AssetDistribution";
 
 const Analyze_TradesRoute = () => {
   const [showAllHoldings, setShowAllHoldings] = useState(false);
@@ -131,6 +132,10 @@ const Analyze_TradesRoute = () => {
         <TradeVolumeChart tradeData={plTransactions} />
         <TransactionTypeChart tradeData={plTransactions} />
         <CumulativeInvestmentChart tradeData={plTransactions} />
+        <AssetDistributionChart
+          holdingsData={cryptoHoldings}
+          listOfCoins={listOfCoins}
+        />
       </div>
     </Fragment>
   );
