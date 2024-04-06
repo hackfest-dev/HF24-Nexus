@@ -1,0 +1,65 @@
+[
+  {
+    "transaction_id": 1,
+    "user_id": "TT4q2YUjkAUnFaPLWWmf3PQ2dB72",
+    "token_id": "Qwsogvtv82FCd",
+    "token_name": "Bitcoin",
+    "token_symbol": "BTC",
+    "amount": 0.7169733951850016,
+    "bought_at": "2024-03-31 00:26:17.63457+05:30"
+  },
+  {
+    "transaction_id": 3,
+    "user_id": "TT4q2YUjkAUnFaPLWWmf3PQ2dB72",
+    "token_id": "-l8Mn2pVlRs-p",
+    "token_name": "XRP",
+    "token_symbol": "XRP",
+    "amount": 38334.762146021734,
+    "bought_at": "2024-03-31 00:34:01.395352+05:30"
+  },
+  {
+    "transaction_id": 4,
+    "user_id": "TT4q2YUjkAUnFaPLWWmf3PQ2dB72",
+    "token_id": "a91GCGd_u96cF",
+    "token_name": "Dogecoin",
+    "token_symbol": "DOGE",
+    "amount": 125012.23486024009,
+    "bought_at": "2024-03-31 00:34:40.612457+05:30"
+  },
+  {
+    "transaction_id": 5,
+    "user_id": "TT4q2YUjkAUnFaPLWWmf3PQ2dB72",
+    "token_id": "zNZHO_Sjf",
+    "token_name": "Solana",
+    "token_symbol": "SOL",
+    "amount": 128.20909762167622,
+    "bought_at": "2024-03-31 00:34:59.469201+05:30"
+  },
+  {
+    "transaction_id": 6,
+    "user_id": "TT4q2YUjkAUnFaPLWWmf3PQ2dB72",
+    "token_id": "uW2tk-ILY0ii",
+    "token_name": "Polygon",
+    "token_symbol": "MATIC",
+    "amount": 25367.86934553793,
+    "bought_at": "2024-03-31 00:35:20.240971+05:30"
+  },
+  {
+    "transaction_id": 7,
+    "user_id": "TT4q2YUjkAUnFaPLWWmf3PQ2dB72",
+    "token_id": "xz24e0BjL",
+    "token_name": "Shiba Inu",
+    "token_symbol": "SHIB",
+    "amount": 834188536.5855888,
+    "bought_at": "2024-03-31 00:35:43.795842+05:30"
+  },
+  {
+    "transaction_id": 2,
+    "user_id": "TT4q2YUjkAUnFaPLWWmf3PQ2dB72",
+    "token_id": "razxDUgYGNAdQ",
+    "token_name": "Ethereum",
+    "token_symbol": "ETH",
+    "amount": 9.36074243706294,
+    "bought_at": "2024-03-31 00:33:45.463192+05:30"
+  }
+]

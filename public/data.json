@@ -1,0 +1,189 @@
+[
+  {
+    "Cryptocurrency Name": "Bitcoin",
+    "Transaction Type": "BUY",
+    "Average Buying Price": 69727.5673778543,
+    "Date": "2024-03-31 00:26:17",
+    "Quantity": 1.43415300089417,
+    "Price": 69727.5673778543,
+    "Amount": 100000,
+    "Realized P/L": null,
+    "Realized P/L (%)": null
+  },
+  {
+    "Cryptocurrency Name": "Bitcoin",
+    "Transaction Type": "SELL",
+    "Average Buying Price": 69727.5673778543,
+    "Date": "2024-03-31 00:27:49",
+    "Quantity": 1.43408267096979,
+    "Price": 69730.9869398086,
+    "Amount": 100000,
+    "Realized P/L": 4.90393454101286,
+    "Realized P/L (%)": 0.004904
+  },
+  {
+    "Cryptocurrency Name": "Bitcoin",
+    "Transaction Type": "BUY",
+    "Average Buying Price": 69729.2771169071,
+    "Date": "2024-03-31 00:28:06",
+    "Quantity": 1.43408267096979,
+    "Price": 69730.9869398086,
+    "Amount": 100000,
+    "Realized P/L": null,
+    "Realized P/L (%)": null
+  },
+  {
+    "Cryptocurrency Name": "Bitcoin",
+    "Transaction Type": "SELL",
+    "Average Buying Price": 69729.2771169071,
+    "Date": "2024-03-31 00:28:14",
+    "Quantity": 1.43415300089417,
+    "Price": 69730.9869398086,
+    "Amount": 100004.904175039,
+    "Realized P/L": 2.45214764513366,
+    "Realized P/L (%)": 0.002452
+  },
+  {
+    "Cryptocurrency Name": "Bitcoin",
+    "Transaction Type": "BUY",
+    "Average Buying Price": 69729.2856232812,
+    "Date": "2024-03-31 00:28:29",
+    "Quantity": 0.0143408267096979,
+    "Price": 69730.9869398086,
+    "Amount": 1000,
+    "Realized P/L": null,
+    "Realized P/L (%)": null
+  },
+  {
+    "Cryptocurrency Name": "Bitcoin",
+    "Transaction Type": "SELL",
+    "Average Buying Price": 69729.2856232812,
+    "Date": "2024-03-31 00:28:35",
+    "Quantity": 0.00717041335484893,
+    "Price": 69730.9869398086,
+    "Amount": 500,
+    "Realized P/L": 0.0121991427489547,
+    "Realized P/L (%)": 0.00244
+  },
+  {
+    "Cryptocurrency Name": "Bitcoin",
+    "Transaction Type": "SELL",
+    "Average Buying Price": 69729.2856232812,
+    "Date": "2024-03-31 00:28:41",
+    "Quantity": 0.00717041335484893,
+    "Price": 69730.9869398086,
+    "Amount": 500,
+    "Realized P/L": 0.0121991427489547,
+    "Realized P/L (%)": 0.00244
+  },
+  {
+    "Cryptocurrency Name": "Bitcoin",
+    "Transaction Type": "BUY",
+    "Average Buying Price": 69730.9406476668,
+    "Date": "2024-03-31 00:33:23",
+    "Quantity": 0.716973395185002,
+    "Price": 69737.594638499,
+    "Amount": 50000,
+    "Realized P/L": null,
+    "Realized P/L (%)": null
+  },
+  {
+    "Cryptocurrency Name": "Ethereum",
+    "Transaction Type": "BUY",
+    "Average Buying Price": 3518.66679502164,
+    "Date": "2024-03-31 00:33:45",
+    "Quantity": 7.36074243706294,
+    "Price": 3518.66679502164,
+    "Amount": 25900,
+    "Realized P/L": null,
+    "Realized P/L (%)": null
+  },
+  {
+    "Cryptocurrency Name": "XRP",
+    "Transaction Type": "BUY",
+    "Average Buying Price": 0.628776563375689,
+    "Date": "2024-03-31 00:34:01",
+    "Quantity": 38334.7621460217,
+    "Price": 0.628776563375689,
+    "Amount": 24104,
+    "Realized P/L": null,
+    "Realized P/L (%)": null
+  },
+  {
+    "Cryptocurrency Name": "Dogecoin",
+    "Transaction Type": "BUY",
+    "Average Buying Price": 0.199542187984893,
+    "Date": "2024-03-31 00:34:40",
+    "Quantity": 125012.23486024,
+    "Price": 0.199542187984893,
+    "Amount": 24945.2148688936,
+    "Realized P/L": null,
+    "Realized P/L (%)": null
+  },
+  {
+    "Cryptocurrency Name": "Solana",
+    "Transaction Type": "BUY",
+    "Average Buying Price": 194.993962704354,
+    "Date": "2024-03-31 00:34:59",
+    "Quantity": 128.209097621676,
+    "Price": 194.993962704354,
+    "Amount": 25000,
+    "Realized P/L": null,
+    "Realized P/L (%)": null
+  },
+  {
+    "Cryptocurrency Name": "Polygon",
+    "Transaction Type": "BUY",
+    "Average Buying Price": 0.985498610840069,
+    "Date": "2024-03-31 00:35:20",
+    "Quantity": 25367.8693455379,
+    "Price": 0.985498610840069,
+    "Amount": 25000,
+    "Realized P/L": null,
+    "Realized P/L (%)": null
+  },
+  {
+    "Cryptocurrency Name": "Shiba Inu",
+    "Transaction Type": "BUY",
+    "Average Buying Price": 0.000029969244245824,
+    "Date": "2024-03-31 00:35:43",
+    "Quantity": 834188536.585589,
+    "Price": 0.000029969244245824,
+    "Amount": 25000,
+    "Realized P/L": null,
+    "Realized P/L (%)": null
+  },
+  {
+    "Cryptocurrency Name": "Ethereum",
+    "Transaction Type": "BUY",
+    "Average Buying Price": 3523.26355221633,
+    "Date": "2024-04-01 17:19:17",
+    "Quantity": 2,
+    "Price": 3540.18132509425,
+    "Amount": 7080.36265018851,
+    "Realized P/L": null,
+    "Realized P/L (%)": null
+  },
+  {
+    "Cryptocurrency Name": "Ethereum",
+    "Transaction Type": "SELL",
+    "Average Buying Price": 3523.26355221633,
+    "Date": "2024-04-01 17:30:24",
+    "Quantity": 3,
+    "Price": 3539.03169125607,
+    "Amount": 10617.0950737682,
+    "Realized P/L": 47.3044171192378,
+    "Realized P/L (%)": 0.447544
+  },
+  {
+    "Cryptocurrency Name": "Ethereum",
+    "Transaction Type": "BUY",
+    "Average Buying Price": 3527.09054055138,
+    "Date": "2024-04-01 17:30:57",
+    "Quantity": 3,
+    "Price": 3539.03169125607,
+    "Amount": 10617.0950737682,
+    "Realized P/L": null,
+    "Realized P/L (%)": null
+  }
+]
