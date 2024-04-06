@@ -229,6 +229,21 @@ export async function FetchCryptoTransactionsInfo(uid){
   }
 }
 
+export async function CalculateStressmetric(uid){
+  const options = {
+    method: 'GET',
+    url: `https://api-cryptohack.onrender.com/users/${uid}/calculate_stress_metric`
+  };
+  try {
+    const response = await axios.request(options);
+    
+    return response.data;
+  } catch(e){
+    console.error(e)
+  }
+  }
+
+
 export async function FetchFiatTransactions(uid) {
   const options = {
     method: 'GET',
