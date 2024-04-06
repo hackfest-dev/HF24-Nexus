@@ -8,6 +8,14 @@ import { UserContext } from "../../Contexts/user.context";
 import FeelingForm from '../../Components/CryptoTable/FeelingForm.component';
 import { Get_Volatility, CalculateStressmetric } from "../../Helpers/API_Calls";
 
+const getLastVolatilityValue = (data) => {
+  if (!data) return null;
+  const keys = Object.keys(data);
+  const lastValue = data[keys[keys.length - 1]];
+  if (typeof lastValue !== 'number') return null; // Ensure it's a number
+  return lastValue.toFixed(3); // Round off to 2 decimal places
+};
+
 const CryptoRoute = () => {
     const [isFormOpen, setIsFormOpen] = useState(false);
 
@@ -20,19 +28,22 @@ const CryptoRoute = () => {
   const det = details["data"];
   const { db_user, user } = useContext(UserContext);
   const [stressMetric, setStressMetric] = useState(null);
+  const [volatilityData, setVolatilityData] = useState(null);
   const [quote, setQuote] = useState(Quotes[Math.floor(Math.random() * Quotes.length - 1)]);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setQuote(Quotes[Math.floor(Math.random() * Quotes.length - 2)]);
     }, 4000);
-
     return () => clearInterval(timer);
   }, []);
 
   useEffect(() => {
     CalculateStressmetric(db_user.uid).then((res) => {
       setStressMetric(res.stress_metric);
+    });
+    Get_Volatility().then((res) => {
+      setVolatilityData(res);
     });
   }, [db_user.uid]);
 
@@ -57,7 +68,7 @@ const CryptoRoute = () => {
               <div className="inline w-2/5">
                 <motion.div className="hidden gap-3 card p-5 lg:flex">
                   <h3>
-                    Today's Market Volatility
+                    Today's Market Volatility - {volatilityData ? getLastVolatilityValue(volatilityData) || 'Loading...' : 'Loading...'}
                     <br />
                     According to your today's trades: Your Stress Metric - {stressMetric || 'Loading...'}
                   </h3>

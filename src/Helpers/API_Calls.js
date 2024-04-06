@@ -273,19 +273,18 @@ export async function FetchInitialBalance(uid) {
     console.error(error);
   }
 }
-export async function Get_Volatility(){
+
+export async function Get_Volatility() {
   const options = {
     method: 'GET',
-    url: `https://api-cryptohack.onrender.com/get_volatility`
+    url: 'https://api-cryptohack.onrender.com/get_volatility'
   };
   try {
     const response = await axios.request(options);
-
-    return response.data;
+    return response.data.normalized_volatility_index;
   } catch (error) {
     console.error(error);
   }
-
 }
 
 export async function FetchIndividualCryptoHolding(uid, token_id) {
