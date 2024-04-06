@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, Fragment } from "react";
 import { Line } from "react-chartjs-2";
 import "chart.js/auto"; // Import chart.js
 
-const CurrentPricevsEffectivePriceChart = () => {
+const CurrentPricevsEffectivePriceChart = ({ data, loc }) => {
   const [selectedCrypto, setSelectedCrypto] = useState("");
   const [chartData, setChartData] = useState({});
   const chartRef = useRef(null);
@@ -14,8 +14,6 @@ const CurrentPricevsEffectivePriceChart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("data.json");
-        const data = await response.json();
         const filteredData = data.filter(
           (entry) => entry["Cryptocurrency Name"] === selectedCrypto
         );
@@ -53,7 +51,6 @@ const CurrentPricevsEffectivePriceChart = () => {
     if (selectedCrypto) {
       fetchData();
     } else {
-      // Reset chart data if no cryptocurrency is selected
       setChartData({});
     }
   });
@@ -63,9 +60,9 @@ const CurrentPricevsEffectivePriceChart = () => {
       <h2>Cryptocurrency Price Time Series</h2>
       <select value={selectedCrypto} onChange={handleChange}>
         <option value="">Select a cryptocurrency</option>
-        <option value="Bitcoin">Bitcoin</option>
-        <option value="Ethereum">Ethereum</option>
-        {/* Add more options for other cryptocurrencies if needed */}
+        {loc.map((coin, index) => (
+          <option value={coin}>{coin}</option>
+        ))}
       </select>
       <div>{chartData.labels && <Line data={chartData} ref={chartRef} />}</div>
     </div>

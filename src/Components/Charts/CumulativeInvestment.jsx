@@ -2,20 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import "chart.js/auto";
 
-const CumulativeInvestmentChart = () => {
-  const [tradeData, setTradeData] = useState([]);
-
-  useEffect(() => {
-    fetch("data.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setTradeData(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching trade data:", error);
-      });
-  }, []);
-
+const CumulativeInvestmentChart = ({ tradeData }) => {
   // Sort the trade data by date
   const sortedTradeData = tradeData.sort(
     (a, b) => new Date(a.Date) - new Date(b.Date)
