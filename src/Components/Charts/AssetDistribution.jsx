@@ -50,6 +50,9 @@ const AssetDistributionChart = ({ holdingsData, listOfCoins }) => {
           "rgba(255, 99, 132, 0.6)",
           "rgba(54, 162, 235, 0.6)",
           "rgba(255, 206, 86, 0.6)",
+          "orange",
+          "green",
+          "purple"
           // Add more colors if you have more cryptocurrencies
         ],
         borderColor: [
@@ -64,13 +67,18 @@ const AssetDistributionChart = ({ holdingsData, listOfCoins }) => {
   };
 
   const options = {
-    plugins: {
-      title: {
-        display: true,
-        text: "Asset Distribution",
+  plugins: {
+    title: {
+      display: true,
+      text: "Asset Distribution",
+      font: {
+        size: 24, // Adjust the font size as needed
+        weight: 'bold' // You can also specify font weight if desired
       },
     },
-  };
+  },
+};
+
 
   return <Pie data={data} options={options} />;
 };

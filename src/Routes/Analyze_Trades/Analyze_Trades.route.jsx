@@ -17,6 +17,7 @@ import CurrentPricevsEffectivePriceChart from "../../Components/Charts/CurrentPr
 import TradeVolumeChart from "../../Components/Charts/TradeVolume";
 import TransactionTypeChart from "../../Components/Charts/TransactionType";
 import CumulativeInvestmentChart from "../../Components/Charts/CumulativeInvestment";
+import AssetDistributionChart from "../../Components/Charts/AssetDistribution";
 
 const Analyze_TradesRoute = () => {
   const [showAllHoldings, setShowAllHoldings] = useState(false);
@@ -126,13 +127,34 @@ const Analyze_TradesRoute = () => {
 
   return (
     <Fragment>
-      <div>
-        <CurrentPricevsEffectivePriceChart tradeData={plTransactions} />
-        <TradeVolumeChart tradeData={plTransactions} />
-        <TransactionTypeChart tradeData={plTransactions} />
-        <CumulativeInvestmentChart tradeData={plTransactions} />
-      </div>
-    </Fragment>
+    <div style={{ display: "flex", justifyContent: "space-between" }}>
+  <div style={{ flex: 1, marginRight: "10px" }}>
+    <div style={{ marginBottom: "20px" }}>
+      <CurrentPricevsEffectivePriceChart tradeData={plTransactions} />
+    </div>
+    <div>
+      <TransactionTypeChart tradeData={plTransactions} />
+    </div>
+  </div>
+  <div style={{ flex: 1 }}>
+    <div style={{ marginBottom: "20px" }}>
+      <TradeVolumeChart tradeData={plTransactions} />
+    </div>
+    <div>
+    <AssetDistributionChart holdingsData={cryptoHoldings} listOfCoins={listOfCoins} />
+    </div>
+  </div>
+</div>
+<div style={{ display: "flex", justifyContent: "center" }}>
+<div style={{ flex: 1, maxWidth: "50%", margin: "auto" }}>
+  <CumulativeInvestmentChart tradeData={plTransactions} />
+</div>
+
+</div>
+
+
+
+</Fragment>
   );
 };
 

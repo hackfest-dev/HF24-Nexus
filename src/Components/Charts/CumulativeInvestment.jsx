@@ -30,7 +30,8 @@ const CumulativeInvestmentChart = ({ tradeData }) => {
         data: Object.values(cumulativeInvestment).map((item) => item.amount),
         fill: true,
         backgroundColor: "lightgrey", // Changed background color to light grey
-        borderColor: "grey", // Changed border color to grey
+        borderColor: "grey",
+         // Changed border color to grey
       },
     ],
   };

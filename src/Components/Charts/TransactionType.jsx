@@ -18,8 +18,8 @@ const TransactionTypeChart = ({ tradeData }) => {
       {
         data: Object.values(transactionTypes),
         backgroundColor: [
-          "rgba(255, 99, 132, 0.6)",
-          "rgba(54, 162, 235, 0.6)",
+          "green",
+          "red",
           // Add more colors if you have more transaction types
         ],
         borderColor: [
@@ -37,6 +37,10 @@ const TransactionTypeChart = ({ tradeData }) => {
       title: {
         display: true,
         text: "Transaction Types",
+        font: {
+          size: 24, // Adjust the font size as needed
+          weight: 'bold' // You can also specify font weight if desired
+        },
       },
     },
   };
