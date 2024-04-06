@@ -146,9 +146,10 @@ const DashboardRoute = () => {
 
                     </div>
                     <Link to="/Analyze_Trades">
-    <div className="mt-6 bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer">
-        Analyze Past Trades
-    </div>
+    <div className="mt-1 bg-blue-800 text-white px-4 py-4 rounded-md cursor-pointer">
+    Analyze Trading History
+</div>
+
 </Link>
 
                     
