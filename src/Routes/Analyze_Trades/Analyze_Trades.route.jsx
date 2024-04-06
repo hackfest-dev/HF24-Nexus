@@ -127,10 +127,7 @@ const Analyze_TradesRoute = () => {
   return (
     <Fragment>
       <div>
-        {/*<CurrentPricevsEffectivePriceChart
-          data={plTransactions}
-          loc={listOfCoins}
-  />*/}
+        <CurrentPricevsEffectivePriceChart tradeData={plTransactions} />
         <TradeVolumeChart tradeData={plTransactions} />
         <TransactionTypeChart tradeData={plTransactions} />
         <CumulativeInvestmentChart tradeData={plTransactions} />

@@ -1,67 +1,54 @@
-import React, { useState, useEffect, useRef, Fragment } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Line } from "react-chartjs-2";
 import "chart.js/auto"; // Import chart.js
 
-const CurrentPricevsEffectivePriceChart = ({ data, loc }) => {
-  const [selectedCrypto, setSelectedCrypto] = useState("");
-  const [chartData, setChartData] = useState({});
+const CurrentPricevsEffectivePriceChart = ({ tradeData }) => {
+  const [selectedCoin, setSelectedCoin] = useState("All");
+  const uniqueCoins = [
+    ...new Set(tradeData.map((trade) => trade["Cryptocurrency Name"])),
+  ];
   const chartRef = useRef(null);
 
-  const handleChange = (event) => {
-    setSelectedCrypto(event.target.value);
+  const filteredData = tradeData.filter(
+    (entry) => entry["Cryptocurrency Name"] === selectedCoin
+  );
+
+  const dates = filteredData.map((entry) => entry.Date);
+  const prices = filteredData.map((entry) => entry.Price);
+  const avgPrices = filteredData.map((entry) => entry["Average Buying Price"]);
+  const chartData = {
+    labels: dates,
+    datasets: [
+      {
+        label: `${selectedCoin} Price`,
+        data: prices,
+        borderColor: "blue",
+        backgroundColor: "rgba(0, 0, 255, 0.1)",
+        fill: true,
+      },
+      {
+        label: `Effective Price`,
+        data: avgPrices,
+        borderColor: "green",
+        backgroundColor: "rgba(0, 255, 0, 0.1)",
+        fill: true,
+      },
+    ],
   };
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const filteredData = data.filter(
-          (entry) => entry["Cryptocurrency Name"] === selectedCrypto
-        );
-
-        const dates = filteredData.map((entry) => entry.Date);
-        const prices = filteredData.map((entry) => entry.Price);
-        const avgPrices = filteredData.map(
-          (entry) => entry["Average Buying Price"]
-        );
-
-        setChartData({
-          labels: dates,
-          datasets: [
-            {
-              label: `${selectedCrypto} Price`,
-              data: prices,
-              borderColor: "blue",
-              backgroundColor: "rgba(0, 0, 255, 0.1)",
-              fill: true,
-            },
-            {
-              label: `Effective Price`,
-              data: avgPrices,
-              borderColor: "green",
-              backgroundColor: "rgba(0, 255, 0, 0.1)",
-              fill: true,
-            },
-          ],
-        });
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    if (selectedCrypto) {
-      fetchData();
-    } else {
-      setChartData({});
-    }
-  });
+  const handleChange = (event) => {
+    setSelectedCoin(event.target.value);
+  };
 
   return (
     <div>
-      <h2>Cryptocurrency Price Time Series</h2>
-      <select value={selectedCrypto} onChange={handleChange}>
-        <option value="">Select a cryptocurrency</option>
-        {loc.map((coin, index) => (
-          <option value={coin}>{coin}</option>
+      <h2>Coincurrency Price Time Series</h2>
+      <select value={selectedCoin} onChange={handleChange}>
+        <option value="">Select a Cryptocurrency</option>
+        {uniqueCoins.map((coin) => (
+          <option key={coin} value={coin}>
+            {coin}
+          </option>
         ))}
       </select>
       <div>{chartData.labels && <Line data={chartData} ref={chartRef} />}</div>
