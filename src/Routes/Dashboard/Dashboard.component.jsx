@@ -8,6 +8,38 @@ import CryptoTransactionsDashboard from "../../Components/Dashboard/CryptoTransa
 import FiatTransactionsDashboard from "../../Components/Dashboard/FiatTransactions.component";
 
 const DashboardRoute = () => {
+    const [showAllHoldings, setShowAllHoldings] = useState(false);
+
+    const handleViewAll = () => {
+        setShowAllHoldings(true);
+    };
+
+    // Assuming you have a function to toggle back to limited holdings
+    const handleViewLimited = () => {
+        setShowAllHoldings(false);
+    };
+
+    const [showAllTransactions, setShowAllTransactions] = useState(false);
+
+    const handleViewAll1 = () => {
+        setShowAllTransactions(true);
+    };
+
+    // Assuming you have a function to toggle back to limited transactions
+    const handleViewLimited1 = () => {
+        setShowAllTransactions(false);
+    };
+
+    const [showAllFiatTransactions, setShowAllFiatTransactions] = useState(false);
+
+    const handleShowAllFiatTransactions = () => {
+        setShowAllFiatTransactions(true);
+    };
+
+    // Assuming you have a function to toggle back to limited transactions
+    const handleShowLimitedFiatTransactions = () => {
+        setShowAllFiatTransactions(false);
+    };
 
     const { db_user, user } = useContext(UserContext);
 
@@ -116,35 +148,68 @@ const DashboardRoute = () => {
                 <div className="flex w-full gap-4 items-start flex-wrap">
                     <div className="flex flex-col gap-4" style={{ flex: "2" }}>
 
-                        <div className="flex flex-col gap-4 p-5 card">
-                            <span className="text-lg flex w-full justify-between items-center">Current Holdings<span className="text-sm cursor-pointer">View all</span></span>
-                            <div className="flex">
-                                {cryptoHoldings && cryptoHoldings.length > 0 && (
-                                    <CryptoHoldings holdings={cryptoHoldings.slice(0, 6)} listOfCoins={listOfCoins} />
-                                )}
-                            </div>
-                        </div>
+                    <div className="flex flex-col gap-4 p-5 card">
+            <div className="flex w-full justify-between items-center">
+                <span className="text-lg">Current Holdings</span>
+                {showAllHoldings ? (
+                    <button className="text-sm cursor-pointer" onClick={() => handleViewLimited()}>
+                        View less
+                    </button>
+                ) : (
+                    <button className="text-sm cursor-pointer" onClick={() => handleViewAll()}>
+                        View all
+                    </button>
+                )}
+            </div>
+            <div className="flex">
+                {cryptoHoldings && cryptoHoldings.length > 0 && (
+                    <CryptoHoldings holdings={showAllHoldings ? cryptoHoldings : cryptoHoldings.slice(0, 6)} listOfCoins={listOfCoins} />
+                )}
+            </div>
+        </div>
 
-                        <div className="flex gap-5">
-                            <div className="flex flex-col gap-4 p-4 px-6 card w-full">
-                                <span className="text-lg flex w-full justify-between items-center"><span>Fiat Transaction History</span><span className="text-sm cursor-pointer">View all</span></span>
-                                <div className="flex">
-                                    {fiatTransactions && fiatTransactions.length >0 &&(
-                                        <FiatTransactionsDashboard transactions={fiatTransactions.slice(0, 8)} />
-                                    )}   
-                                </div>
-                            </div>
-                        </div>
+        <div className="flex gap-5">
+            <div className="flex flex-col gap-4 p-4 px-6 card w-full">
+                <div className="flex w-full justify-between items-center">
+                    <span className="text-lg">Fiat Transaction History</span>
+                    {showAllFiatTransactions ? (
+                        <button className="text-sm cursor-pointer" onClick={() => handleShowLimitedFiatTransactions()}>
+                            View less
+                        </button>
+                    ) : (
+                        <button className="text-sm cursor-pointer" onClick={() => handleShowAllFiatTransactions()}>
+                            View all
+                        </button>
+                    )}
+                </div>
+                <div className="flex">
+                    {fiatTransactions && fiatTransactions.length > 0 && (
+                        <FiatTransactionsDashboard transactions={showAllFiatTransactions ? fiatTransactions : fiatTransactions.slice(0, 2)} />
+                    )}
+                </div>
+            </div>
+        </div>
                     </div>
 
                     <div className="flex flex-col gap-4 p-5 px-6 card flex-1">
-                        <span className="text-lg flex w-full justify-between items-center"><span>Crypto Transaction History</span><span className="text-sm cursor-pointer">View all</span></span>
-                        <div className="flex">
-                            {cryptoTransactions && cryptoTransactions.length>0 && (
-                            <CryptoTransactionsDashboard transactions={cryptoTransactions.slice(0, 12)} />
-                            )} 
-                        </div>
-                    </div>
+            <div className="flex w-full justify-between items-center">
+                <span className="text-lg">Crypto Transaction History</span>
+                {showAllTransactions ? (
+                    <button className="text-sm cursor-pointer" onClick={() => handleViewLimited1()}>
+                        View less
+                    </button>
+                ) : (
+                    <button className="text-sm cursor-pointer" onClick={() => handleViewAll1()}>
+                        View all
+                    </button>
+                )}
+            </div>
+            <div className="flex">
+                {cryptoTransactions && cryptoTransactions.length > 0 && (
+                    <CryptoTransactionsDashboard transactions={showAllTransactions ? cryptoTransactions : cryptoTransactions.slice(0, 6)} />
+                )}
+            </div>
+        </div>
                 </div>
             </div>
         </Fragment>
