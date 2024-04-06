@@ -192,12 +192,12 @@ return (<>
                       Bitcoin <span className="span">BTC/USD</span>
                     </a>
                   </div>
-                  <data className="card-value" value="46168.95">
-                    USD 46,168.95
+                  <data className="card-value" value="67895.40">
+                    USD 67,895.40
                   </data>
                   <div className="card-analytics">
-                    <data className="current-price" value="36641.20">
-                      36,641.20
+                    <data className="current-price" value="67895.40">
+                    67,895.40
                     </data>
                     <div className="badge red">-0.79%</div>
                   </div>
@@ -216,12 +216,12 @@ return (<>
                       Ethereum <span className="span">ETH/USD</span>
                     </a>
                   </div>
-                  <data className="card-value" value="3480.04">
-                    USD 3,480.04
+                  <data className="card-value" value="3336.25">
+                    USD 3,336.25
                   </data>
                   <div className="card-analytics">
-                    <data className="current-price" value="36641.20">
-                      36,641.20
+                    <data className="current-price" value="3336.25">
+                    3,336.25
                     </data>
                     <div className="badge green">+10.55%</div>
                   </div>
@@ -244,8 +244,8 @@ return (<>
                     USD 1.00
                   </data>
                   <div className="card-analytics">
-                    <data className="current-price" value="36641.20">
-                      36,641.20
+                    <data className="current-price" value="1.00">
+                    1.00
                     </data>
                     <div className="badge red">-0.01%</div>
                   </div>
@@ -264,12 +264,12 @@ return (<>
                       BNB <span className="span">BNB/USD</span>
                     </a>
                   </div>
-                  <data className="card-value" value="443.56">
-                    USD 443.56
+                  <data className="card-value" value="583.02">
+                    USD 583.02
                   </data>
                   <div className="card-analytics">
-                    <data className="current-price" value="36641.20">
-                      36,641.20
+                    <data className="current-price" value="583.02">
+                    583.02
                     </data>
                     <div className="badge red">-1.24%</div>
                   </div>
