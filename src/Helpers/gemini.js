@@ -14,7 +14,7 @@ export async function multimodal(imageBinary, prompt){
   // For text-and-image input (multimodal), use the gemini-pro-vision model
   const model = genAI.getGenerativeModel({ model: "gemini-pro-vision" });
   if(!prompt){
-    prompt = "Explain me this image or chart"
+    prompt = "Explain me this image or chart, You will only give me insights for my day to day trading and advice me on mental well-being. You will NOT respond to any subject out of this scope"
   }
   const mimeType = "image/png";
 
@@ -31,19 +31,19 @@ export async function multimodal(imageBinary, prompt){
   const safetySettings = [
     {
       category: HarmCategory.HARM_CATEGORY_HARASSMENT,
-      threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+      threshold: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
     },
     {
       category: HarmCategory.HARM_CATEGORY_HATE_SPEECH,
-      threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+      threshold: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
     },
     {
       category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT,
-      threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+      threshold: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
     },
     {
       category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-      threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH,
+      threshold: HarmBlockThreshold.BLOCK_LOW_AND_ABOVE,
     },
   ];
 
@@ -64,15 +64,15 @@ export async function chat(prompt){
       {
         role: "model",
         parts: [{ text: "I am your personal AI Assistant I will help you with all your needs for trading and take care of your mental health" }],
-        }
-    //   {
-    //     role: "user",
-    //     parts: [{ text: "" }],
-    //   },
-    //   {
-    //     role: "model",
-    //     parts: [{ text: "ปัจจุบันมีทั้ง Messaging API, LIFF, LINE Login, LINE Beacon, LINE Notify, LINE Pay, และ LINE MINI App ที่สามารถใช้งานในไทยได้ครับ" }],
-    //   }
+        },
+        {
+          role: "user",
+          parts: [{ text: "Good, You will only give me insights for my day to day trading and advice me on mental health. You will NOT respond to any subject out of this scope, understood?" }],
+        },
+        {
+          role: "model",
+          parts: [{ text: "Yes I will not respond to anything outside of finance and mental wellbeing." }],
+          }
     ]
   });
 
