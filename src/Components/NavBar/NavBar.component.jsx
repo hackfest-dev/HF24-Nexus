@@ -18,16 +18,17 @@ const NavBar = () => {
 
     return (
         <Fragment>
-            <div className="navbar flex gap-3 p-4 items-center w-full justify-end">
+            <div className="navbar flex gap-3 p-4 items-center w-full justify-end font-sans font-bold">
 
-            <img src="logo2.png" alt="Logo" width="65"/>
-            <button onClick={() => { setDarkMode((e) => !e) }}>Toggle Modes</button>
+            <img src="logo.svg" alt="Logo" width="65" style={{ marginRight: '890px' }}/>
+
+            <button onClick={() => { setDarkMode((e) => !e) }}><img src={darkMode ? "lightmode.png" : "darkmode.png"} alt="Toggle Modes" width="200" />  </button>
             <Link to="/"><div className={"nav-item" + (location.pathname === "/" ? " active" : "")}>Home</div></Link>
             {user &&
                 <Link to="/Dashboard"><div className={"nav-item" + (location.pathname === "/Dashboard" ? " active" : "")}>Dashboard</div></Link>
             }
             { user &&
-                <Link to="/AI_Assistant"><div className={"nav-item" + (location.pathname === "/AI_Assistant" ? " active" : "")}>AI_Assistant</div></Link>                    
+                <Link to="/AI_Assistant"><div className={"nav-item" + (location.pathname === "/AI_Assistant" ? " active" : "")}>AI.Assistant</div></Link>                    
             }
             <Link to="/Cryptos"><div className={"nav-item" + (location.pathname.includes("/Cryptos") ? " active" : "")}>Cryptocurrencies</div></Link>
             {user ?

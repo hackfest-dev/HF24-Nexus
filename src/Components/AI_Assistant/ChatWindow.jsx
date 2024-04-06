@@ -9,11 +9,11 @@ const genAI = new GoogleGenerativeAI(API_KEY);
 
 const Header = () => {
   return (
-    <div className="header bg-grey-900 text-white p-4">
+    <div className="header text-gray p-4">
       <h1 id="chat-header" className="flex items-center">
       <img src="chat3.png" alt="chatbot" className="h-12" />
 
-        <b style={{ marginLeft: 12, fontSize: 35 }}>Financial Advisor -</b> <b style={{ marginTop: 4, marginLeft: 8, fontSize: 20 }}>Your Financial and Mental Health Supporter</b>
+        <b style={{ marginLeft: 12, fontSize: 35,color: 'grey'}}>Financial Advisor -</b> <b style={{ marginTop: 4, marginLeft: 8, fontSize: 20, color: 'grey' }}>Your Financial and Mental Health Supporter</b>
       </h1>
     </div>
   );
