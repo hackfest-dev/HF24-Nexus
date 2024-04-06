@@ -13,6 +13,7 @@ import { CreateDBUser } from "./Routes/CreateDBUser/CreateDBUser.route.jsx";
 import AI_AssistantRoute from "./Routes/AI_Assistant/AI_Assistant.route.jsx";
 import HomeRoute from "./Routes/Home/Home.route.jsx";
 import Analyze_TradesRoute from "./Routes/Analyze_Trades/Analyze_Trades.route.jsx";
+import Educational_Content from "./Routes/Educational_Content/Educational_Content.route.jsx"
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "Analyze_Trades",
         element: <Analyze_TradesRoute />,
+      },
+      {
+        path: "Educational_Content",
+        element: <Educational_Content />
       },
       {
         path: "/",

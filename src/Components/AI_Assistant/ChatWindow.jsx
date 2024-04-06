@@ -13,11 +13,7 @@ const Header = () => {
       <h1 id="chat-header" className="flex items-center">
       <img src="chat3.png" alt="chatbot" className="h-12" />
 
-<<<<<<< Updated upstream
         <b style={{ marginLeft: 12, fontSize: 35,color: 'grey'}}>Financial Assistant -</b> <b style={{ marginTop: 4, marginLeft: 8, fontSize: 20, color: 'grey' }}>Your Financial and Mental Health Supporter</b>
-=======
-        <b style={{ marginLeft: 12, fontSize: 35 }}>Financial Advisor -</b> <b style={{ marginTop: 4, marginLeft: 8, fontSize: 20 }}>Your Financial and Mental Health Supporter</b>
->>>>>>> Stashed changes
       </h1>
     </div>
   );
