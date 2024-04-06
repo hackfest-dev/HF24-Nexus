@@ -1,4 +1,5 @@
 import { Fragment, useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { UserContext } from "../../Contexts/user.context";
 import AddMoney from "../../Components/AddMoney/AddMoney.component";
 import CurrencyText from "../../Components/CurrencyText/CurrencyText.component";
@@ -142,7 +143,11 @@ const DashboardRoute = () => {
                                 <span className={"text-xs" + (portValue - initialPortfolioValue >= 0 ? " text-green-500" : " text-red-500")}>{portValue - initialPortfolioValue >= 0 ? "+" : ""}{(portValue - initialPortfolioValue).toFixed(2)}</span>
                             </span>
                         </div>
+
                     </div>
+                    <Link to="/Analyze_Trades"><div className="Analyze_Trades">Analyze Past_Trades</div></Link>
+
+                    
                 </div>
 
                 <div className="flex w-full gap-4 items-start flex-wrap">
