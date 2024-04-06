@@ -17,7 +17,7 @@ Address gambling addictions with appropriate measures.
 4. Anxiety Reduction: Understand mindsets and influences to guide informed decisions.
 5. Risk Management: Utilize AI-based solutions to set staggered thresholds for trading.
 
-Installation and Setup :
+## Installation and Setup :
 1. Clone the repository to your local machine:
 ```
 git clone https://github.com/hackfest-dev/HF24-Nexus
@@ -25,15 +25,25 @@ git clone https://github.com/hackfest-dev/HF24-Nexus
 2. Navigate to the project directory:
 cd Crypto-Hack
 
-3. Install dependencies:
+3. Get your API Keys for Gemini and Coinranking:
+  - Gemini: [API key](https://makersuite.google.com/app/apikey),
+  - Coinranking: [API key](https://rapidapi.com/Coinranking/api/coinranking1)
+
+5. Set these up in your own .env 
+```
+VITE_API_KEY = 'Coinranking-API-Key'
+VITE_GEMINI_API_KEY = 'Gemini-Api-Key'
+```
+
+5. Install dependencies:
 npm install
 
-4. Set up your database and configure environment variables as per the provided sample .env file.
+6. Set up your database preferably using postgresql and deploy your fast api from here.
 
-5. Start the server:
-   npm start
+7. Start the server:
+   npm run dev
 
-6. Access the website through your browser at http://localhost:3000.
+8. Access the website through your browser at http://localhost:5173.
    
 Usage :
 1. Registration and Login: Users can sign up for an account and log in securely.
