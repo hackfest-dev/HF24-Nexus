@@ -382,9 +382,9 @@ return (<>
                       </h3>
                     </div>
                   </td>
-                  <td className="table-data last-price">$56,623.54</td>
+                  <td className="table-data last-price">$67,827.80</td>
                   <td className="table-data last-update green">+1.45%</td>
-                  <td className="table-data market-cap">$880,423,640,582</td>
+                  <td className="table-data market-cap">$1,334,528,746,956</td>
                   <td className="table-data">
                     <img
                       src="/images/chart-1.svg"
@@ -436,9 +436,9 @@ return (<>
                       </h3>
                     </div>
                   </td>
-                  <td className="table-data last-price">$56,623.54</td>
+                  <td className="table-data last-price">$3,334.50</td>
                   <td className="table-data last-update red">-5.12%</td>
-                  <td className="table-data market-cap">$880,423,640,582</td>
+                  <td className="table-data market-cap">$400,615,473,336</td>
                   <td className="table-data">
                     <img
                       src="/images/chart-2.svg"
@@ -490,9 +490,9 @@ return (<>
                       </h3>
                     </div>
                   </td>
-                  <td className="table-data last-price">$56,623.54</td>
+                  <td className="table-data last-price">$1.00</td>
                   <td className="table-data last-update green">+1.45%</td>
-                  <td className="table-data market-cap">$880,423,640,582</td>
+                  <td className="table-data market-cap">$106,842,047,294</td>
                   <td className="table-data">
                     <img
                       src="/images/chart-1.svg"
@@ -544,9 +544,9 @@ return (<>
                       </h3>
                     </div>
                   </td>
-                  <td className="table-data last-price">$56,623.54</td>
+                  <td className="table-data last-price">$583.02</td>
                   <td className="table-data last-update red">-3.75%%</td>
-                  <td className="table-data market-cap">$880,423,640,582</td>
+                  <td className="table-data market-cap">$87,048,308,517</td>
                   <td className="table-data">
                     <img
                       src="/images/chart-2.svg"
@@ -598,9 +598,9 @@ return (<>
                       </h3>
                     </div>
                   </td>
-                  <td className="table-data last-price">$56,623.54</td>
+                  <td className="table-data last-price">$175.00</td>
                   <td className="table-data last-update green">+1.45%</td>
-                  <td className="table-data market-cap">$880,423,640,582</td>
+                  <td className="table-data market-cap">$32,487,513,136</td>
                   <td className="table-data">
                     <img
                       src="/images/chart-1.svg"
@@ -652,9 +652,9 @@ return (<>
                       </h3>
                     </div>
                   </td>
-                  <td className="table-data last-price">$56,623.54</td>
+                  <td className="table-data last-price">$0.59</td>
                   <td className="table-data last-update red">-2.22%</td>
-                  <td className="table-data market-cap">$880,423,640,582</td>
+                  <td className="table-data market-cap">$32,487,513,136</td>
                   <td className="table-data">
                     <img
                       src="/images/chart-2.svg"
@@ -706,9 +706,9 @@ return (<>
                       </h3>
                     </div>
                   </td>
-                  <td className="table-data last-price">$56,623.54</td>
+                  <td className="table-data last-price">$0.58</td>
                   <td className="table-data last-update green">+0.8%</td>
-                  <td className="table-data market-cap">$880,423,640,582</td>
+                  <td className="table-data market-cap">$20,723,077,645</td>
                   <td className="table-data">
                     <img
                       src="/images/chart-1.svg"
@@ -760,9 +760,9 @@ return (<>
                       </h3>
                     </div>
                   </td>
-                  <td className="table-data last-price">$56,623.54</td>
+                  <td className="table-data last-price">$45.77</td>
                   <td className="table-data last-update green">+1.41%</td>
-                  <td className="table-data market-cap">$880,423,640,582</td>
+                  <td className="table-data market-cap">$17,822,647,702</td>
                   <td className="table-data">
                     <img
                       src="/images/chart-1.svg"
