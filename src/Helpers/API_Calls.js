@@ -1,4 +1,5 @@
 import axios from "axios"
+// import { url } from "inspector";
 // import { initializeApp } from "firebase/app";
 // import { getFirestore, setDoc, getDoc, updateDoc , doc } from "firebase/firestore";
 // import { firebaseConfig }  from '../Utils/firebase.js';
@@ -211,6 +212,20 @@ export async function FetchCryptoTransactions(uid) {
     return response.data;
   } catch (error) {
     console.error(error);
+  }
+}
+
+export async function FetchCryptoTransactionsInfo(uid){
+  const options = {
+    method: 'GET',
+    url: `https://api-cryptohack.onrender.com/users/${uid}/crypto_transactions_info`
+  };
+  try {
+    const response = await axios.request(options);
+
+    return response.data;
+  } catch(error) {
+    console.error(error)
   }
 }
 

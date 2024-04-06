@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import CryptoRoute from './Routes/Cryptos/Cryptos.route.jsx';
-
 import {
     createBrowserRouter,
     RouterProvider,
@@ -16,6 +15,7 @@ import DashboardRoute from './Routes/Dashboard/Dashboard.component.jsx';
 import { CreateDBUser } from './Routes/CreateDBUser/CreateDBUser.route.jsx';
 import AI_AssistantRoute from './Routes/AI_Assistant/AI_Assistant.route.jsx';
 import HomeRoute from './Routes/Home/Home.route.jsx';
+import Analyze_TradesRoute from './Routes/Analyze_Trades/Analyze_Trades.route.jsx'
 
 const router = createBrowserRouter([
     {
@@ -49,6 +49,11 @@ const router = createBrowserRouter([
             {
                 path: "AI_Assistant",
                 element: <AI_AssistantRoute />,
+            },
+            {
+                path: "Analyze_Trades",
+                element: <Analyze_TradesRoute />,
+
             },
             {
                 path: "/",
