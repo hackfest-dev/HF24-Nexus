@@ -70,7 +70,7 @@ const SellModal = ({ coin, setSellModal }) => {
             <div className="modal-blur">
                 <div className="buy-modal login-container flex flex-col gap-4 p-6 card rounded-lg font-semibold">
                     <span className="text-red-500 self-end" onClick={() => { setSellModal(false) }}>Close</span>
-                    Login to paper trade cryptocurrencies.
+                    Login to trade cryptocurrencies.
                 </div>
             </div>
         );
