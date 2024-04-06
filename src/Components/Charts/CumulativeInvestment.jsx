@@ -29,8 +29,8 @@ const CumulativeInvestmentChart = ({ tradeData }) => {
         label: "Cumulative Investment",
         data: Object.values(cumulativeInvestment).map((item) => item.amount),
         fill: true,
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
-        borderColor: "rgba(75, 192, 192, 1)",
+        backgroundColor: "lightgrey", // Changed background color to light grey
+        borderColor: "grey", // Changed border color to grey
       },
     ],
   };
@@ -41,13 +41,25 @@ const CumulativeInvestmentChart = ({ tradeData }) => {
         beginAtZero: true,
         title: {
           display: true,
-          text: "Amount",
+          text: "Amount (USD)", // Adjusted y-axis title
+        },
+        grid: {
+          color: "lightgrey", // Changed y-axis grid color to light grey
+        },
+        ticks: {
+          color: "grey", // Changed y-axis ticks color to grey
         },
       },
       x: {
         title: {
           display: true,
-          text: "Date",
+          text: "Date", // Adjusted x-axis title
+        },
+        grid: {
+          color: "lightgrey", // Changed x-axis grid color to light grey
+        },
+        ticks: {
+          color: "grey", // Changed x-axis ticks color to grey
         },
       },
     },

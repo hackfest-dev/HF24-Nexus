@@ -126,12 +126,26 @@ const Analyze_TradesRoute = () => {
 
   return (
     <Fragment>
-      <div>
-        <CurrentPricevsEffectivePriceChart tradeData={plTransactions} />
-        <TradeVolumeChart tradeData={plTransactions} />
-        <TransactionTypeChart tradeData={plTransactions} />
-        <CumulativeInvestmentChart tradeData={plTransactions} />
-      </div>
+ <div style={{ display: "flex", justifyContent: "space-between" }}>
+  <div style={{ flex: 1, marginRight: "10px" }}>
+    <CurrentPricevsEffectivePriceChart tradeData={plTransactions} />
+  </div>
+  <div style={{ flex: 1 }}>
+    <TradeVolumeChart tradeData={plTransactions} />
+  </div>
+</div>
+<div style={{ display: "flex", justifyContent: "space-between" }}>
+  <div style={{ flex: 1, marginRight: "10px" }}>
+    <TransactionTypeChart tradeData={plTransactions} />
+  </div>
+  <div style={{ flex: 1 }}>
+    <CumulativeInvestmentChart tradeData={plTransactions} />
+  </div>
+</div>
+
+
+
+
     </Fragment>
   );
 };

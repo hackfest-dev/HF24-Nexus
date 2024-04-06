@@ -40,9 +40,30 @@ const CurrentPricevsEffectivePriceChart = ({ tradeData }) => {
     setSelectedCoin(event.target.value);
   };
 
+  const options = {
+    scales: {
+      x: {
+        grid: {
+          color: "grey", // Grey color for x-axis grid lines
+        },
+        ticks: {
+          color: "grey", // Grey color for x-axis ticks
+        },
+      },
+      y: {
+        grid: {
+          color: "grey", // Grey color for y-axis grid lines
+        },
+        ticks: {
+          color: "grey", // Grey color for y-axis ticks
+        },
+      },
+    },
+  };
+
   return (
-    <div>
-      <h2>Coincurrency Price Time Series</h2>
+    <div style={{ fontFamily:"sans-serif", fontWeight:"bold", color:"grey"}}>
+      <h2>Cryptocurrency Price Time Series</h2>
       <select value={selectedCoin} onChange={handleChange}>
         <option value="">Select a Cryptocurrency</option>
         {uniqueCoins.map((coin) => (
@@ -51,7 +72,11 @@ const CurrentPricevsEffectivePriceChart = ({ tradeData }) => {
           </option>
         ))}
       </select>
-      <div>{chartData.labels && <Line data={chartData} ref={chartRef} />}</div>
+      <div>
+        {chartData.labels && (
+          <Line data={chartData} ref={chartRef} options={options} />
+        )}
+      </div>
     </div>
   );
 };

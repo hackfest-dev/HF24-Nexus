@@ -33,8 +33,8 @@ const TradeVolumeChart = ({ tradeData }) => {
       {
         label: "Trade Volume",
         data: Object.values(binnedData).map((item) => item.amount),
-        backgroundColor: "rgba(75, 192, 192, 0.6)",
-        borderColor: "rgba(75, 192, 192, 1)",
+        backgroundColor: "rgba(192, 75, 192, 0.6)", // Changed background color to a shade of purple
+        borderColor: "rgba(192, 75, 192, 1)", // Changed border color to a shade of purple
         borderWidth: 1,
       },
     ],
@@ -46,20 +46,32 @@ const TradeVolumeChart = ({ tradeData }) => {
         beginAtZero: true,
         title: {
           display: true,
-          text: "Amount",
+          text: "Amount (USD)", // Adjusted y-axis title
+        },
+        grid: {
+          color: "lightgrey", // Changed y-axis grid color to light grey
+        },
+        ticks: {
+          color: "grey", // Changed y-axis ticks color to grey
         },
       },
       x: {
         title: {
           display: true,
-          text: "Date",
+          text: "Date", // Adjusted x-axis title
+        },
+        grid: {
+          color: "lightgrey", // Changed x-axis grid color to light grey
+        },
+        ticks: {
+          color: "grey", // Changed x-axis ticks color to grey
         },
       },
     },
   };
 
   return (
-    <div>
+    <div style={{ color:"grey",fontFamily:"sans-serif", fontWeight:"bold"}}>
       <select
         value={selectedCoin}
         onChange={(e) => setSelectedCoin(e.target.value)}
