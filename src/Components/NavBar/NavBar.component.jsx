@@ -19,9 +19,10 @@ const NavBar = () => {
     return (
         <Fragment>
             <div className="navbar flex gap-3 p-4 items-center w-full justify-end font-sans font-bold">
-
-            <img src="logo.svg" alt="Logo" width="65" style={{ marginRight: '890px' }}/>
-
+            <div>
+            <img src="logo.svg" alt="Logo" width="65" style={{ marginRight: '890px' }}/><h6 className="contents">Nexus</h6>
+            
+            </div>
             <button onClick={() => { setDarkMode((e) => !e) }}><img src={darkMode ? "lightmode.png" : "darkmode.png"} alt="Toggle Modes" width="200" />  </button>
             <Link to="/"><div className={"nav-item" + (location.pathname === "/" ? " active" : "")}>Home</div></Link>
             {user &&
