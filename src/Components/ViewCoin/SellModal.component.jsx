@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { FetchIndividualCryptoHolding, SellCryptoAPI } from "../../Helpers/API_Calls";
+import { FetchCryptoHoldings, FetchIndividualCryptoHolding, SellCryptoAPI } from "../../Helpers/API_Calls";
 import CurrencyText from "../CurrencyText/CurrencyText.component";
 import { UserContext } from "../../Contexts/user.context";
+import CryptoHoldings from "../Dashboard/Holdings.component";
 
 const SellModal = ({ coin, setSellModal }) => {
 
@@ -59,7 +60,7 @@ const SellModal = ({ coin, setSellModal }) => {
                 </div>
                 <div className={"flex w-full justify-between" + (holdings >= cryptoAmount ? " text-green-500" : " text-red-500")}>
                     <span>Available Tokens:</span>
-                    <span>{holdings?.toFixed(5)}</span>
+                    <span><CurrencyText /></span>
                 </div>
 
                 <span className="text-xs flex justify-between">

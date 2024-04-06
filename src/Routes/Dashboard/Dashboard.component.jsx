@@ -145,7 +145,11 @@ const DashboardRoute = () => {
                         </div>
 
                     </div>
-                    <Link to="/Analyze_Trades"><div className="Analyze_Trades">Analyze Past_Trades</div></Link>
+                    <Link to="/Analyze_Trades">
+    <div className="mt-6 bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer">
+        Analyze Past Trades
+    </div>
+</Link>
 
                     
                 </div>
@@ -215,6 +219,9 @@ const DashboardRoute = () => {
                 )}
             </div>
         </div>
+        <div>
+                <h1></h1>
+            </div>
                 </div>
             </div>
         </Fragment>
