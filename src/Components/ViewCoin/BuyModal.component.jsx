@@ -2,85 +2,148 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { BuyCryptoAPI } from "../../Helpers/API_Calls";
 import CurrencyText from "../CurrencyText/CurrencyText.component";
 import { UserContext } from "../../Contexts/user.context";
+import { CalculateStressmetric } from "../../Helpers/API_Calls";
 
-const BuyModal = ({ coin, setBuyModal }) => {
+const BuyModal = ({ coin, setBuyModal}) => {
+  const { db_user, user, setRefresh } = useContext(UserContext);
+  const [cryptoAmount, setCryptoAmount] = useState("");
+  const [fiatAmount, setFiatAmount] = useState("");
+  const [buying, setBuying] = useState(false);
+  const [stressMetric, setStressMetric] = useState(null);
 
-    const { db_user, user, setRefresh } = useContext(UserContext);
+  useEffect(() => {
+    CalculateStressmetric(db_user.uid).then((res) => {
+      setStressMetric(res.stress_metric);
+    });
+  }, [db_user.uid]);
 
-    const [cryptoAmount, setCryptoAmount] = useState("");
-    const [fiatAmount, setFiatAmount] = useState("");
-    const [buying, setBuying] = useState(false);
+  const BuyCryptoFn = () => {
+    setBuying(true);
+    BuyCryptoAPI(user.uid, coin.uuid, parseFloat(cryptoAmount))
+      .then((res) => {
+        if (res && res.status && res.status === "Success") {
+          setBuyModal(false);
+        } else {
+          console.error("BuyCryptoAPI failed or returned invalid response:", res);
+        }
+      })
+      .catch((error) => {
+        console.error("BuyCryptoAPI failed with error:", error);
+      })
+      .finally(() => {
+        setBuying(false);
+        setRefresh((e) => !e);
+      });
+  };
 
-    const BuyCryptoFn = () => {
-        setBuying(true)
-        BuyCryptoAPI(user.uid, coin.uuid, parseFloat(cryptoAmount)).then((res) => {
-            if (res && res.status && res.status === "Success") {
-                setBuyModal(false)
-            } else {
-                console.error("BuyCryptoAPI failed or returned invalid response:", res);
-            }
-        }).catch((error) => {
-            console.error("BuyCryptoAPI failed with error:", error);
-        }).finally(() => {
-            setBuying(false)
-            setRefresh((e) => !e)
-        })
-    }
-
-    if (!user) {
-        return (
-            <div className="modal-blur">
-                <div className="buy-modal login-container flex flex-col gap-4 p-6 card rounded-lg font-semibold">
-                    <span className="text-red-500 self-end" onClick={() => { setBuyModal(false) }}>Close</span>
-                    Login to paper trade cryptocurrencies.
-
-                </div>
-            </div>
-        )
-    }
-
-    return (
-        <div className="modal-blur">
-            <div className="buy-modal login-container flex flex-col gap-4 card p-6 rounded-lg font-semibold">
-                <span className="material-symbols-outlined cursor-pointer self-end bg-red-800 rounded-lg p-1 text-lg text-white"
-                    onClick={() => { setBuyModal(false) }}>close</span>
-                <span>Place order to buy {coin.name} <span className="text-xs text-gray-500">{coin.symbol}</span></span>
-
-                <div className="flex w-full justify-between">
-                    <span>Current Price:</span>
-                    <span><CurrencyText amoun={coin.price} /></span>
-                </div>
-
-                <span className="text-xs">Amount in {coin.symbol}</span>
-                <input type="text" placeholder={`Enter amount in ${coin.symbol}`} value={cryptoAmount} onChange={(e) => {
-                    setCryptoAmount(e.target.value)
-                    setFiatAmount(coin.price * e.target.value)
-                }} />
-
-                <span className="text-xs">Amount in fiat</span>
-                <input type="text" placeholder={`Enter amount in fiat`} value={fiatAmount} onChange={(e) => {
-                    setFiatAmount(e.target.value)
-                    setCryptoAmount(e.target.value / coin.price)
-                }} />
-
-                <div className="flex flex-col gap-1">
-                    <span>Estimated Cost</span>
-                    <hr />
-                    <div className="flex w-full justify-between font-medium">
-                        <span>{coin.symbol}</span>
-                        <span><CurrencyText amoun={parseFloat(coin.price) * parseFloat(cryptoAmount)} /></span>
-                    </div>
-                    <div className={"flex w-full justify-between font-medium " + (parseFloat(coin.price) * parseFloat(cryptoAmount) >= db_user.Current_Balance ? "text-red-500" : "text-green-500")}>
-                        <span>Wallet Balance</span>
-                        <span><CurrencyText amoun={db_user.Current_Balance} /></span>
-                    </div>
-                </div>
-
-
-                <button className="login" onClick={BuyCryptoFn} disabled={!cryptoAmount}>{buying ? "Completing transaction" : `Buy ${coin.symbol}`}</button>
-            </div>
+  const renderStressSuggestion = () => {
+    if (stressMetric === "Extremely Stressed") {
+      return (
+        <div className="stress-suggestion">
+          <p> DISCLAIMER **THIS IS NOT AN ADVICE** < br/>
+          But according to our algorithm, it is recommended that your trading pattern is indicating high stress levels. 
+          <br />It might be beneficial for you to take a break from trading for a while.
+          </p>
+          <p>As you are appeared to be extremely stressed today, we recommend you to not take trades for today,< br/> as it might affect mental health which can result in significant losses.</p>
         </div>
-    )
-}
+      );
+    } else if (stressMetric === "Stressed") {
+      return (
+        <div className="stress-suggestion">
+          <p>**NOT AN ADVICE** <br /> But your trading activity indicates that you may be experiencing some stress.<a href="https://www.investopedia.com/deal-with-crypto-fomo-6455103"> Learn more </a></p>
+          <p>Consider taking a short break of 6-12 hours to reset and come back refreshed.</p>
+        </div>
+      );
+    }
+    return null;
+  };
+
+  if (!user) {
+    return (
+      <div className="modal-blur">
+        <div className="buy-modal login-container flex flex-col gap-4 p-6 card rounded-lg font-semibold">
+          <span className="text-red-500 self-end" onClick={() => setBuyModal(false)}>
+            Close
+          </span>
+          Login to paper trade cryptocurrencies.
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="modal-blur">
+      <div className="buy-modal login-container flex flex-col gap-4 card p-6 rounded-lg font-semibold">
+        <span
+          className="material-symbols-outlined cursor-pointer self-end bg-red-800 rounded-lg p-1 text-lg text-white"
+          onClick={() => setBuyModal(false)}
+        >
+          close
+        </span>
+        {renderStressSuggestion()}
+        <span>
+          Place order to buy {coin.name}{" "}
+          <span className="text-xs text-gray-500">{coin.symbol}</span>
+        </span>
+        <div className="flex w-full justify-between">
+          <span>Current Price:</span>
+          <span>
+            <CurrencyText amoun={coin.price} />
+          </span>
+        </div>
+        <span className="text-xs">Amount in {coin.symbol}</span>
+        <input
+          type="text"
+          placeholder={`Enter amount in ${coin.symbol}`}
+          value={cryptoAmount}
+          onChange={(e) => {
+            setCryptoAmount(e.target.value);
+            setFiatAmount(coin.price * e.target.value);
+          }}
+        />
+        <span className="text-xs">Amount in fiat</span>
+        <input
+          type="text"
+          placeholder={`Enter amount in fiat`}
+          value={fiatAmount}
+          onChange={(e) => {
+            setFiatAmount(e.target.value);
+            setCryptoAmount(e.target.value / coin.price);
+          }}
+        />
+        <div className="flex flex-col gap-1">
+          <span>Estimated Cost</span>
+          <hr />
+          <div className="flex w-full justify-between font-medium">
+            <span>{coin.symbol}</span>
+            <span>
+              <CurrencyText amoun={parseFloat(coin.price) * parseFloat(cryptoAmount)} />
+            </span>
+          </div>
+          <div
+            className={
+              "flex w-full justify-between font-medium " +
+              (parseFloat(coin.price) * parseFloat(cryptoAmount) >= db_user.Current_Balance
+                ? "text-red-500"
+                : "text-green-500")
+            }
+          >
+            <span>Wallet Balance</span>
+            <span>
+              <CurrencyText amoun={db_user.Current_Balance} />
+            </span>
+          </div>
+        </div>
+        <button
+          className="login"
+          onClick={BuyCryptoFn}
+          disabled={!cryptoAmount}
+        >
+          {buying ? "Completing transaction" : `Buy ${coin.symbol}`}
+        </button>
+      </div>
+    </div>
+  );
+};
 
 export default BuyModal;

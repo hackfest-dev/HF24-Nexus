@@ -9,7 +9,6 @@ import { FetchCoin, FetchCoinPrice } from "../../Helpers/API_Calls";
 import BuyModal from "../../Components/ViewCoin/BuyModal.component";
 import SellModal from "../../Components/ViewCoin/SellModal.component";
 
-
 ChartJS.register(
     CategoryScale,
     LinearScale,

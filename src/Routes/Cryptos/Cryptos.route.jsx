@@ -68,9 +68,9 @@ const CryptoRoute = () => {
               <div className="inline w-2/5">
                 <motion.div className="hidden gap-3 card p-5 lg:flex">
                 <h3>
-                Today's Market Volatility - {volatilityData ? getLastVolatilityValue(volatilityData) || 'Loading...' : 'Loading...'}
+                Today's Market Volatility - {volatilityData ? getLastVolatilityValue(volatilityData) || 'Calculating...' : 'Calculating...'}
                 <br />
-                According to your today's trades: Your Stress Metric - {stressMetric || 'Loading...'}
+                According to your today's trades: Your Stress Metric - {stressMetric || 'Calculating...'}
               </h3>
               <div>
                       {['Extremely Stressed', 'Stressed'].includes(stressMetric) && (
@@ -80,7 +80,7 @@ const CryptoRoute = () => {
                 </motion.div>
                 <motion.div className="hidden gap-3 card p-5 lg:flex">
                 <h3>
-  How are you feeling today?
+  Do you think we are wrong about it?
   <button className="bold" style={{ marginLeft: '10px', textDecoration: 'underline' }} onClick={openForm}>
     {' '}
     TELL US
