@@ -18,6 +18,7 @@ main{
 }
 
 :root {
+  font-family: 'DM Sans', sans-serif;
   color: white;
   /**
    * colors
@@ -242,6 +243,7 @@ body.active { overflow: hidden; }
 .h1,
 .h2,
 .h3 {
+  font-weight: bold;
   color: var(--white);
   line-height: 1.1;
 }
