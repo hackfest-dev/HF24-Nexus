@@ -2,20 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Pie } from "react-chartjs-2";
 import "chart.js/auto";
 
-const TransactionTypeChart = () => {
-  const [tradeData, setTradeData] = useState([]);
-
-  useEffect(() => {
-    fetch("data.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setTradeData(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching trade data:", error);
-      });
-  }, []);
-
+const TransactionTypeChart = ({ tradeData }) => {
   const transactionTypes = tradeData.reduce((acc, trade) => {
     const type = trade["Transaction Type"];
     if (!acc[type]) {

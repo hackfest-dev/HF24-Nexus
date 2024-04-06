@@ -2,20 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Bar } from "react-chartjs-2";
 import "chart.js/auto";
 
-const TradeVolumeChart = () => {
-  const [tradeData, setTradeData] = useState([]);
+const TradeVolumeChart = ({ tradeData }) => {
   const [selectedCoin, setSelectedCoin] = useState("All");
-
-  useEffect(() => {
-    fetch("data.json")
-      .then((response) => response.json())
-      .then((data) => {
-        setTradeData(data);
-      })
-      .catch((error) => {
-        console.error("Error fetching trade data:", error);
-      });
-  }, []);
 
   const uniqueCoins = [
     ...new Set(tradeData.map((trade) => trade["Cryptocurrency Name"])),
