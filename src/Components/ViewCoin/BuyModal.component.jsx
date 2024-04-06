@@ -65,7 +65,7 @@ const BuyModal = ({ coin, setBuyModal}) => {
           <span className="text-red-500 self-end" onClick={() => setBuyModal(false)}>
             Close
           </span>
-          Login to paper trade cryptocurrencies.
+          Login to trade Cryptocurrencies.
         </div>
       </div>
     );
