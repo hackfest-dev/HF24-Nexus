@@ -1,4 +1,4 @@
-# Nexus Crypto-Hack 💻💲
+# Nexus 💻💲
 Official Repo of the Nexus
 
 
@@ -21,28 +21,25 @@ Address gambling addictions with appropriate measures.
 1. Clone the repository to your local machine:
 git clone https://github.com/VinayakRai5/Crypto-Hack.git
 
-2. Navigate to the project directory:
-cd Crypto-Hack
-
-3. Get your API Keys for Gemini and Coinranking:
+2. Get your API Keys for Gemini and Coinranking:
   - Gemini: [API key](https://makersuite.google.com/app/apikey),
   - Coinranking: [API key](https://rapidapi.com/Coinranking/api/coinranking1)
 
-5. Set these up in your own .env 
+3. Set these up in your own .env 
 ```
 VITE_API_KEY = 'Coinranking-API-Key'
 VITE_GEMINI_API_KEY = 'Gemini-Api-Key'
 ```
 
-5. Install dependencies:
+4. Install dependencies:
 npm install
 
-6. Set up your database preferably using postgresql and deploy your fast api from here.
+5. Set up your database preferably using postgresql and deploy your fast api from here.
 
-7. Start the server:
+6. Start the server:
    npm run dev
 
-8. Access the website through your browser at http://localhost:5173.
+7. Access the website through your browser at http://localhost:5173.
    
 Usage :
 1. Registration and Login: Users can sign up for an account and log in securely.
